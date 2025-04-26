@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERTsolutions - Soluciones Digitales, Resultados Reales</title>
+    <style>
+        :root {
+            --verde-azulado: #2CA6A4;
+            --azul-fuerte: #1336BF;
+            --azul-claro: #A6E2E0;
+            --morado: #A65ACF;
+            --color-fondo: #f8fafc;
+            --color-texto: #2d3748;
+            --blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--azul-fuerte) 0%, var(--verde-azulado) 100%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--blanco);
+            text-transform: uppercase;
+        }
+
+        .nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--blanco);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--morado);
+            color: var(--blanco);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #8e4bb5;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--azul-fuerte);
+            font-size: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--verde-azulado);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--blanco);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: var(--verde-azulado);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .team-member {
+            background: var(--blanco);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--azul-claro);
+        }
+
+        .team-member h3 {
+            color: var(--azul-fuerte);
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            color: var(--morado);
+            font-weight: 600;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--azul-fuerte) 0%, var(--verde-azulado) 100%);
+            color: var(--blanco);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 3px;
+            background: var(--morado);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: var(--blanco);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--azul-claro);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 50px 15px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo"><img src="logo.png" alt="Descripción de la imagen" width="250" height="70">
+    </div>
+    <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="mision.html">Misión</a>
+        <a href="valores.html">valores</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="sobrenosotros.html">nosotros</a>
+    </nav>
+</header>
+
+<section class="hero" id="inicio">
+    <h1 class="fade-in">SOLUCIONES DIGITALES, RESULTADOS REALES</h1>
+    <p class="fade-in delay-1">Brindamos soluciones tecnológicas innovadoras y accesibles para pequeñas y medianas empresas</p>
+    <a href="#servicios" class="button fade-in delay-2">Nuestros Servicios</a>
+</section>
+
+<section id="mision">
+    <h2 class="section-title">Nuestra Identidad</h2>
+    
+    <div class="card-container">
+        <div class="card fade-in">
+            <h3>Misión</h3>
+            <p>Brindar soluciones tecnológicas, innovadoras y accesibles para pequeñas y medianas empresas, mejorando su productividad.</p>
+        </div>
+        
+        <div class="card fade-in delay-1">
+            <h3>Visión</h3>
+            <p>Ser un referente local de soluciones tecnológicas para pequeñas y medianas empresas, logrando acompañar a nuestros clientes en su crecimiento digital en los próximos años.</p>
+        </div>
+        
+        <div class="card fade-in delay-2">
+            <h3>Valores</h3>
+            <ul>
+                <li>Responsabilidad</li>
+                <li>Puntualidad</li>
+                <li>Excelencia</li>
+                <li>Trabajo en equipo</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="servicios" style="background-color: var(--azul-claro); padding: 80px 20px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        
+        <div class="card-container">
+            <div class="card fade-in">
+                <h3>Consultoría tecnológica</h3>
+                <p>Automatización de procesos para optimizar la eficiencia operativa de tu empresa.</p>
+            </div>
+            
+            <div class="card fade-in delay-1">
+                <h3>Diseño web</h3>
+                <p>Creación de portales y sitios web profesionales que mejoran tu presencia digital.</p>
+            </div>
+            
+            <div class="card fade-in delay-2">
+                <h3>Gestión de datos</h3>
+                <p>Administración profesional de bases de datos para organizar tu información crítica.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="objetivos">
+    <h2 class="section-title">Nuestros Objetivos</h2>
+    
+    <div class="card-container">
+        <div class="card fade-in">
+            <h3>Corto plazo</h3>
+            <p>Dar a conocer la empresa, conseguir primeros clientes y mejorar nuestras habilidades y organización.</p>
+        </div>
+        
+        <div class="card fade-in delay-1">
+            <h3>Mediano plazo</h3>
+            <p>Posicionarnos en el mercado como una de las empresas que brinde mayor solución a las necesidades de los clientes.</p>
+        </div>
+        
+        <div class="card fade-in delay-2">
+            <h3>Largo plazo</h3>
+            <p>Expandir nuestros servicios a grandes corporaciones y consolidarnos a nivel nacional.</p>
+        </div>
+    </div>
+</section>
+
+<section id="equipo">
+    <h2 class="section-title">Nuestro Equipo</h2>
+    
+    <div class="team-container">
+        <div class="team-member fade-in">
+            <img src="https://via.placeholder.com/150" alt="Crismerlyn Sanchez">
+            <h3>Crismerlyn Sanchez</h3>
+            <p>Directora General</p>
+        </div>
+        
+        <div class="team-member fade-in delay-1">
+            <img src="https://via.placeholder.com/150" alt="Juan Pérez">
+            <h3>Juan Pérez</h3>
+            <p>Director de Finanzas</p>
+        </div>
+        
+        <div class="team-member fade-in delay-2">
+            <img src="https://via.placeholder.com/150" alt="Sarah Fermin">
+            <h3>Sarah Fermin</h3>
+            <p>Directora de Marketing</p>
+        </div>
+    </div>
+</section>
+
+<section id="contacto" style="background-color: var(--verde-azulado); color: var(--blanco); padding: 80px 20px;">
+    <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+        <h2 class="section-title" style="color: var(--blanco);">Contáctanos</h2>
+        
+        <div style="margin-top: 30px; font-size: 1.2rem;">
+            <p><strong>Teléfono:</strong> (809) 994 3776</p>
+            <p><strong>Email:</strong>xpertsolutions@gmail.com</p>
+            <p><strong>Sitio web:</strong> xpertsolutions.com</p>
+        </div>
+        
+        <a href="mailto:hola@sitioincreible.com" class="button" style="margin-top: 30px; background-color: var(--morado);">Envíanos un mensaje</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>xpertsolutions</h3>
+            <p>SOLUCIONES DIGITALES, RESULTADOS REALES</p>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Enlaces</h3>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#mision">Misión y Visión</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Contacto</h3>
+            <ul>
+                <li><a href="tel:1">(809) 994 3776</a></li>
+                <li>xpertsolutions@gmail.com.com</a></li>
+                <li><a href="http://www.xpertsolutions.com" target="_blank">http://www.xpertsolutions.com</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>&copy; 2025 PERTsolutions. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+</body>
+</html>

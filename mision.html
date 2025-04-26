@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión - XpertSolutions</title>
+    <style>
+        :root {
+            --verde-azulado: #2CA6A4;
+            --azul-fuerte: #1336BF;
+            --azul-claro: #A6E2E0;
+            --morado: #A65ACF;
+            --color-fondo: #f8fafc;
+            --color-texto: #2d3748;
+            --blanco: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--azul-fuerte) 0%, var(--verde-azulado) 100%);
+            color: var(--blanco);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 40px;
+        }
+
+        h1 {
+            color: var(--azul-claro);
+            margin-bottom: 30px;
+            font-size: 2.8rem;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: var(--morado);
+            margin: 30px 0 15px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .resaltado {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-left: 5px solid var(--morado);
+            border-radius: 5px;
+            margin: 40px 0;
+        }
+
+        .resaltado p:first-child {
+            color: var(--azul-claro);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .copyright {
+            color: var(--azul-claro);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        .eslogan {
+            font-style: italic;
+            color: var(--azul-claro);
+            margin-top: 15px;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            main {
+                padding: 0 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="XpertSolutions" width="250" height="70">
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="mision.html">Misión</a>
+            <a href="valores.html">valores</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="sobrenosotros.html">nosotros</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Nuestra Misión</h1>
+        
+        <p>En XpertSolutions tenemos un compromiso claro con nuestros clientes:</p>
+
+        <div class="resaltado">
+            <p>Brindar soluciones tecnológicas, innovadoras y accesibles para pequeñas y medianas empresas, mejorando su productividad.</p>
+        </div>
+
+        <h2>¿Cómo lo logramos?</h2>
+        <p>Nos especializamos en entender las necesidades específicas de cada negocio para ofrecer soluciones personalizadas que realmente generen impacto. Nuestro enfoque combina:</p>
+        
+        <ul>
+            <li>Tecnología de vanguardia adaptada a presupuestos accesibles</li>
+            <li>Innovación constante en nuestros procesos y servicios</li>
+            <li>Asesoramiento personalizado para cada etapa del crecimiento empresarial</li>
+            <li>Soluciones escalables que evolucionan con tu negocio</li>
+        </ul>
+
+        <h2>Nuestro Compromiso</h2>
+        <p>Creemos que cada empresa, sin importar su tamaño, merece acceso a herramientas tecnológicas de calidad que le permitan competir en el mercado actual. Por eso nos enfocamos en hacer la tecnología accesible, comprensible y útil para las pequeñas y medianas empresas.</p>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p><strong>Teléfono:</strong> (809) 994 3776</p>
+            <p><strong>Email:</strong> xpertsolutions@gmail.com</p>
+            <p><strong>Sitio web:</strong> xpertsolutions.com</p>
+        </div>
+        
+        <p class="eslogan">"SOLUCIONES DIGITALES, RESULTADOS REALES"</p>
+        
+        <p class="copyright">&copy; 2025 XpertSolutions. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
