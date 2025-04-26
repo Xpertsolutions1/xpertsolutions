@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valores - XpertSolutions</title>
-    <style>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+   <style>
         :root {
             --verde-azulado: #2CA6A4;
             --azul-fuerte: #1336BF;
@@ -21,6 +22,7 @@
             background: linear-gradient(135deg, var(--azul-fuerte) 0%, var(--verde-azulado) 100%);
             color: var(--blanco);
             line-height: 1.6;
+            animation: fadeIn 2s ease-out;
         }
 
         header {
@@ -33,6 +35,7 @@
             top: 0;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideDown 0.5s ease-out;
         }
 
         .logo img {
@@ -63,6 +66,7 @@
             max-width: 900px;
             margin: 40px auto;
             padding: 0 40px;
+            animation: fadeInUp 1s ease-out;
         }
 
         h1 {
@@ -71,12 +75,14 @@
             font-size: 2.8rem;
             text-align: center;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-out;
         }
 
         h2 {
             color: var(--morado);
             margin: 30px 0 15px;
             font-size: 1.8rem;
+            animation: fadeInLeft 1.5s ease-out;
         }
 
         p {
@@ -90,6 +96,7 @@
             border-radius: 5px;
             padding: 30px;
             margin: 40px 0;
+            animation: fadeInRight 1s ease-out;
         }
 
         .valores-lista ul {
@@ -125,6 +132,7 @@
             padding: 40px 20px;
             margin-top: 80px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeInUp 2s ease-out;
         }
 
         .contact-info {
@@ -181,6 +189,33 @@
                 gap: 10px;
             }
         }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            0% { transform: translateY(-20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInLeft {
+            0% { transform: translateX(-20px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeInRight {
+            0% { transform: translateX(20px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
     </style>
 </head>
 <body>
@@ -192,9 +227,9 @@
         <nav>
             <a href="index.html">Inicio</a>
             <a href="mision.html">Misión</a>
-            <a href="valores.html">valores</a>
+            <a href="valores.html">Valores</a>
             <a href="servicios.html">Servicios</a>
-            <a href="sobrenosotros.html">nosotros</a>
+            <a href="sobrenosotros.html">Nosotros</a>
         </nav>
     </header>
 
@@ -206,11 +241,8 @@
         <div class="valores-lista">
             <ul>
                 <li><strong>Responsabilidad:</strong> Asumimos con seriedad nuestros compromisos y nos hacemos cargo de cada proyecto desde el inicio hasta su entrega final.</li>
-                
                 <li><strong>Puntualidad:</strong> Valoramos el tiempo de nuestros clientes y nos comprometemos a cumplir con los plazos establecidos en cada proyecto.</li>
-                
                 <li><strong>Excelencia:</strong> Buscamos la perfección en cada detalle, ofreciendo soluciones tecnológicas de la más alta calidad.</li>
-                
                 <li><strong>Trabajo en equipo:</strong> Fomentamos la colaboración entre nuestros profesionales para ofrecer soluciones integrales y multidisciplinarias.</li>
             </ul>
         </div>
