@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <title>Contáctanos - Xpert Solutions</title>
+    <style>
+        :root {
+            --verde-azulado: #2CA6A4;
+            --azul-fuerte: #1336BF;
+            --azul-claro: #A6E2E0;
+            --morado: #A65ACF;
+            --blanco: #ffffff;
+            --gris-oscuro: #2d3748;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--azul-fuerte), var(--verde-azulado));
+            color: var(--blanco);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--blanco);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 40px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: var(--azul-claro);
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: var(--morado);
+            margin-top: 40px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .resaltado {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-left: 5px solid var(--morado);
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--blanco);
+            font-family: inherit;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--morado);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: var(--morado);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background-color: #8e44ad;
+            transform: translateY(-2px);
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--azul-claro);
+        }
+
+        .contact-details h3 {
+            margin: 0 0 5px 0;
+            color: var(--azul-claro);
+        }
+
+        .contact-details p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .map-container {
+            margin-top: 40px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 40px 20px;
+            margin-top: 80px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .weird {
+            font-style: italic;
+            color: var(--azul-claro);
+            margin-top: 10px;
+        }
+
+        .eslogan {
+            font-style: italic;
+            color: var(--azul-claro);
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+
+        .copyright {
+            color: var(--azul-claro);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        .success-message {
+            display: none;
+            background: rgba(46, 204, 113, 0.2);
+            border-left: 5px solid #2ecc71;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="logo.ico" alt="Xpert Solutions" width="250" height="70"></a>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="sobrenosotros.html">Nosotros</a>
+            <a href="contacto.html">Contáctanos</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contáctanos</h1>
+        <p>En Xpert Solutions estamos listos para ayudarte con tus necesidades tecnológicas. Completa el formulario y nos pondremos en contacto contigo a la brevedad, o si lo prefieres, utiliza cualquiera de nuestros otros medios de contacto.</p>
+
+        <div class="success-message" id="successMessage">
+            <p>¡Gracias por contactarnos! Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2>Envíanos un mensaje</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Teléfono (opcional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group" >
+                        <label for="service">Servicio de interés</label>
+                        <select id="service" name="service">
+                            <option value="" style="color: black; font-style: black;">Selecciona un servicio</option>
+                            <option value="bases-datos" style="color: black; font-style: black;">Diseño de bases de datos</option>
+                            <option value="sistemas" style="color: black; font-style: black;">Análisis y diseño de sistemas</option>
+                            <option value="web" style="color: black; font-style: black;">Desarrollo web</option>
+                            <option value="automatizacion" style="color: black; font-style: black;">Automatización de procesos</option>
+                            <option value="asesoramiento" style="color: black; font-style: black;">Asesoramiento tecnológico</option>
+                            <option value="otro" style="color: black; font-style: black;">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h2>Información de contacto</h2>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h3>Teléfono</h3>
+                        <p>(809) 994-3776</p>
+                        <p>Lunes a Viernes, 9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3>Correo electrónico</h3>
+                        <p>xpertsolutions@gmail.com</p>
+                        <p>Respuesta en menos de 24 horas</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-details">
+                        <h3>Sitio web</h3>
+                        <p>www.xpertsolutions.com</p>
+                        <p>Visita nuestro sitio para más información</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Dirección</h3>
+                        <p>Calle Principal #123, Santo Domingo</p>
+                        <p>República Dominicana</p>
+                    </div>
+                </div>
+                
+                <div class="resaltado">
+                    <p><strong>Horario de atención:</strong></p>
+                    <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                    <p>Sábados: 10:00 AM - 2:00 PM (solo citas)</p>
+                    <p>Domingos: Cerrado</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <h2 style="color:white; font-size: 40px; font-style: white;">¿Dónde estamos ubicados?</h2>
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.673036739687!2d-69.93371402400267!3d18.491828082558494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf899600a0ea83%3A0xadc6a33215fefbf1!2sCentro%20Educativo%20Nuestra%20Se%C3%B1ora%20de%20la%20Fe!5e0!3m2!1ses!2sdo!4v1714665000000!5m2!1ses!2sdo" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          
+        </div>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p><strong>Teléfono:</strong> (809) 994 3776</p>
+            <p><strong>Email:</strong> xpertsolutions@gmail.com</p>
+            <p><strong>Sitio web:</strong> xpertsolutions.com</p>
+        </div>
+        <p class="eslogan">"SOLUCIONES DIGITALES, RESULTADOS REALES"</p>
+        <p class="copyright">&copy; 2025 XpertSolutions. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aquí iría el código para enviar el formulario a un servidor
+            // Por ahora solo mostraremos el mensaje de éxito
+            
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('contactForm').reset();
+            
+            // Desplazarse suavemente al mensaje de éxito
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+            
+            // Ocultar el mensaje después de 5 segundos
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        });
+    </script>
+
+</body>
+</html>
