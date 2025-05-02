@@ -67,6 +67,56 @@
             transform: translateY(-2px);
         }
 
+        /* Hamburguesa */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 30px;
+            height: 21px;
+            position: relative;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: var(--blanco);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        /* Menú móvil */
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--azul-fuerte) 0%, var(--verde-azulado) 100%);
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 998;
+        }
+
+        .mobile-nav.active {
+            display: block;
+        }
+
+        .mobile-nav a {
+            display: block;
+            color: var(--blanco);
+            text-decoration: none;
+            padding: 10px 0;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
         .hero {
             background: transparent;
             height: 80vh;
@@ -266,15 +316,16 @@
 
         @media (max-width: 768px) {
             .header {
-                flex-direction: column;
-                padding: 15px;
+                flex-direction: row;
+                padding: 15px 20px;
             }
 
             .nav {
-                margin-top: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
             }
 
             .hero h1 {
@@ -316,7 +367,24 @@
     <div class="logo">
         <a href="index.html"><img src="logo.ico" alt="Descripción de la imagen" width="250" height="70"></a>
     </div>
+    
+    <!-- Menú hamburguesa (tres rallitas) -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <!-- Menú normal para desktop -->
     <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="sobrenosotros.html">Nosotros</a>
+        <a href="Contacto.html">Contáctanos</a>
+    </nav>
+    
+    <!-- Menú móvil -->
+    <nav class="mobile-nav" id="mobileNav">
         <a href="index.html">Inicio</a>
         <a href="servicios.html">Servicios</a>
         <a href="sobrenosotros.html">Nosotros</a>
@@ -460,6 +528,22 @@
         <p>&copy; 2025 PERTsolutions. Todos los derechos reservados.</p>
     </div>
 </footer>
+
+<script>
+    // Función para el menú hamburguesa
+    document.getElementById('hamburger').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.getElementById('mobileNav').classList.toggle('active');
+    });
+    
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('#mobileNav a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('hamburger').classList.remove('active');
+            document.getElementById('mobileNav').classList.remove('active');
+        });
+    });
+</script>
 
 </body>
 </html>
