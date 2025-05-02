@@ -14,7 +14,7 @@
             --blanco: #ffffff;
             --gris-oscuro: #2d3748;
         }
-
+    
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,7 +22,7 @@
             color: var(--blanco);
             line-height: 1.6;
         }
-
+    
         header {
             background: rgba(0, 0, 0, 0.2);
             padding: 20px 40px;
@@ -34,18 +34,20 @@
             backdrop-filter: blur(10px);
             z-index: 100;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
         }
-
+    
         .logo img {
             height: 60px;
             width: auto;
         }
-
+    
         nav {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
-
+    
         nav a {
             color: var(--blanco);
             text-decoration: none;
@@ -54,24 +56,24 @@
             border-radius: 4px;
             transition: all 0.3s ease;
         }
-
+    
         nav a:hover {
             background-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
-
+    
         main {
             max-width: 1000px;
             margin: 40px auto;
             padding: 0 40px;
             animation: fadeIn 1s ease-out;
         }
-
+    
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
+    
         h1 {
             color: var(--azul-claro);
             font-size: 2.8rem;
@@ -79,22 +81,22 @@
             margin-bottom: 40px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-
+    
         h2 {
             color: var(--blanco);
             font-size: 1.6rem;
             margin-top: 30px;
         }
-
+    
         p {
             margin-bottom: 20px;
         }
-
+    
         ul {
             padding-left: 20px;
             margin-bottom: 20px;
         }
-
+    
         .resaltado {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
@@ -102,7 +104,7 @@
             border-radius: 5px;
             margin-top: 30px;
         }
-
+    
         footer {
             background: rgba(0, 0, 0, 0.3);
             padding: 40px 20px;
@@ -110,7 +112,7 @@
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-
+    
         .contact-info {
             display: flex;
             justify-content: center;
@@ -118,24 +120,70 @@
             margin-bottom: 20px;
             flex-wrap: wrap;
         }
-
+    
         .contact-info p {
             margin: 0;
         }
-
+    
         .eslogan {
             font-style: italic;
             color: var(--azul-claro);
             margin: 20px 0;
             font-size: 1.2rem;
         }
-
+    
         .copyright {
             color: var(--azul-claro);
             font-size: 0.9rem;
             margin-top: 20px;
         }
+    
+        /* ----------------------------
+           RESPONSIVE DESIGN ADDED 👇
+        ----------------------------- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 20px;
+            }
+    
+            nav {
+                width: 100%;
+                justify-content: center;
+                gap: 10px;
+                margin-top: 10px;
+                flex-wrap: wrap;
+            }
+    
+            main {
+                padding: 0 20px;
+            }
+    
+            h1 {
+                font-size: 2rem;
+            }
+    
+            h2 {
+                font-size: 1.3rem;
+            }
+    
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+    
+            .logo img {
+                height: 50px;
+            }
+    
+            .eslogan {
+                font-size: 1rem;
+            }
+        }
     </style>
+    
 </head>
 <body>
 
