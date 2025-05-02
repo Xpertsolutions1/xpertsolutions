@@ -15,6 +15,10 @@
             --gris-oscuro: #2d3748;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -25,7 +29,7 @@
 
         header {
             background: rgba(0, 0, 0, 0.2);
-            padding: 20px 40px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -37,22 +41,26 @@
         }
 
         .logo img {
-            height: 60px;
+            height: 50px;
             width: auto;
+            max-width: 100%;
         }
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         nav a {
             color: var(--blanco);
             text-decoration: none;
             font-weight: 600;
-            padding: 8px 15px;
+            padding: 6px 10px;
             border-radius: 4px;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
         nav a:hover {
@@ -62,8 +70,8 @@
 
         main {
             max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 40px;
+            margin: 30px auto;
+            padding: 0 20px;
             animation: fadeIn 1s ease-out;
         }
 
@@ -74,65 +82,64 @@
 
         h1 {
             color: var(--azul-claro);
-            font-size: 2.8rem;
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
             color: var(--morado);
-            margin-top: 40px;
+            margin-top: 30px;
+            font-size: 1.5rem;
         }
 
         p {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-size: 1rem;
         }
 
         .resaltado {
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
+            padding: 15px;
             border-left: 5px solid var(--morado);
             border-radius: 5px;
-            margin-top: 30px;
+            margin-top: 20px;
+            font-size: 0.9rem;
         }
 
         .contact-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 30px;
+            gap: 30px;
+            margin-top: 20px;
         }
 
-        .contact-form {
+        .contact-form, .contact-info {
             flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
+            min-width: 100%;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 600;
+            font-size: 0.9rem;
         }
 
         input, textarea, select {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 4px;
             background: rgba(255, 255, 255, 0.1);
             color: var(--blanco);
             font-family: inherit;
-            font-size: 16px;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
         }
 
@@ -143,7 +150,7 @@
         }
 
         textarea {
-            min-height: 150px;
+            min-height: 120px;
             resize: vertical;
         }
 
@@ -151,12 +158,13 @@
             background-color: var(--morado);
             color: white;
             border: none;
-            padding: 12px 25px;
-            font-size: 16px;
+            padding: 10px 20px;
+            font-size: 0.9rem;
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
+            width: 100%;
         }
 
         button:hover {
@@ -166,9 +174,9 @@
 
         .contact-method {
             display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 15px;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             transition: all 0.3s ease;
@@ -180,38 +188,48 @@
         }
 
         .contact-icon {
-            font-size: 24px;
-            margin-right: 15px;
+            font-size: 20px;
+            margin-right: 12px;
             color: var(--azul-claro);
+            flex-shrink: 0;
         }
 
         .contact-details h3 {
             margin: 0 0 5px 0;
             color: var(--azul-claro);
+            font-size: 1rem;
         }
 
         .contact-details p {
             margin: 0;
             opacity: 0.9;
+            font-size: 0.85rem;
         }
 
         .map-container {
-            margin-top: 40px;
+            margin-top: 30px;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .map-container h2 {
+            color: var(--blanco);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         .map-container iframe {
             width: 100%;
-            height: 350px;
+            height: 300px;
             border: none;
         }
 
         footer {
             background: rgba(0, 0, 0, 0.3);
-            padding: 40px 20px;
-            margin-top: 80px;
+            padding: 20px;
+            margin-top: 50px;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -220,28 +238,92 @@
             font-style: italic;
             color: var(--azul-claro);
             margin-top: 10px;
+            font-size: 0.9rem;
         }
 
         .eslogan {
             font-style: italic;
             color: var(--azul-claro);
-            margin: 20px 0;
-            font-size: 1.2rem;
+            margin: 15px 0;
+            font-size: 1rem;
         }
 
         .copyright {
             color: var(--azul-claro);
-            font-size: 0.9rem;
-            margin-top: 20px;
+            font-size: 0.8rem;
+            margin-top: 15px;
         }
 
         .success-message {
             display: none;
             background: rgba(46, 204, 113, 0.2);
             border-left: 5px solid #2ecc71;
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 15px;
+            margin-bottom: 15px;
             border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        /* Media Queries para diferentes tamaños de pantalla */
+        @media (min-width: 480px) {
+            nav a {
+                padding: 8px 12px;
+                font-size: 1rem;
+            }
+            
+            .logo img {
+                height: 60px;
+            }
+            
+            button {
+                width: auto;
+            }
+        }
+
+        @media (min-width: 600px) {
+            header {
+                padding: 20px 30px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-form, .contact-info {
+                min-width: calc(50% - 15px);
+            }
+            
+            .map-container iframe {
+                height: 350px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            main {
+                padding: 0 30px;
+            }
+            
+            nav {
+                gap: 15px;
+            }
+            
+            .contact-method {
+                padding: 15px;
+            }
+            
+            .contact-icon {
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            .map-container h2 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -286,7 +368,7 @@
                         <input type="tel" id="phone" name="phone">
                     </div>
                     
-                    <div class="form-group" >
+                    <div class="form-group">
                         <label for="service">Servicio de interés</label>
                         <select id="service" name="service">
                             <option value="" style="color: black; font-style: black;">Selecciona un servicio</option>
@@ -357,7 +439,7 @@
         </div>
         
         <div class="map-container">
-            <h2 style="color:white; font-size: 40px; font-style: white;">¿Dónde estamos ubicados?</h2>
+            <h2>¿Dónde estamos ubicados?</h2>
             <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.673036739687!2d-69.93371402400267!3d18.491828082558494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf899600a0ea83%3A0xadc6a33215fefbf1!2sCentro%20Educativo%20Nuestra%20Se%C3%B1ora%20de%20la%20Fe!5e0!3m2!1ses!2sdo!4v1714665000000!5m2!1ses!2sdo" 
             width="600" 
@@ -367,7 +449,6 @@
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
-          
         </div>
     </main>
 
