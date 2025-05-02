@@ -34,11 +34,40 @@
       backdrop-filter: blur(10px);
       z-index: 100;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      flex-wrap: wrap;
     }
 
     .logo img {
       height: 60px;
       width: auto;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 200;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      transition: 0.4s ease;
+      transform-origin: center;
+    }
+
+    .menu-toggle.active .bar1 {
+      transform: rotate(45deg) translateY(8px);
+    }
+
+    .menu-toggle.active .bar2 {
+      opacity: 0;
+    }
+
+    .menu-toggle.active .bar3 {
+      transform: rotate(-45deg) translateY(-8px);
     }
 
     nav {
@@ -152,18 +181,26 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        padding: 15px;
-      }
-
-      .logo {
-        margin-bottom: 15px;
+      .menu-toggle {
+        display: flex;
       }
 
       nav {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+      }
+
+      nav.open {
+        max-height: 300px;
+      }
+
+      nav a {
+        padding: 10px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       main {
@@ -191,10 +228,17 @@
     <div class="logo">
       <a href="index.html"><img src="logo.ico" alt="XpertSolutions" width="250" height="70"></a>
     </div>
-    <nav>
+
+    <div class="menu-toggle" onclick="toggleMenu()" id="toggleButton">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+
+    <nav id="mobileMenu">
       <a href="index.html">Inicio</a>
       <a href="servicios.html">Servicios</a>
-      <a href="sobrenosotros.html">nosotros</a>
+      <a href="sobrenosotros.html">Nosotros</a>
       <a href="Contacto.html">Contáctanos</a>
     </nav>
   </header>
@@ -226,11 +270,18 @@
       <p><strong>Email:</strong> xpertsolutions@gmail.com</p>
       <p><strong>Sitio web:</strong> xpertsolutions.com</p>
     </div>
-    
     <p class="eslogan">"SOLUCIONES DIGITALES, RESULTADOS REALES"</p>
-    
     <p class="copyright">&copy; 2025 XpertSolutions. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const toggle = document.getElementById('toggleButton');
+      menu.classList.toggle('open');
+      toggle.classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
