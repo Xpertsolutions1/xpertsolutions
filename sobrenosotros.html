@@ -1,56 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="icon" href="logo.ico" type="image/x-icon" />
-    <title>Sobre Nosotros - Xpert Solutions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="X..png" type="image/x-icon">
+    <title>XpertSolutions - Soluciones Digitales, Resultados Reales</title>
     <style>
         :root {
             --verde-azulado: #2CA6A4;
             --azul-fuerte: #1336BF;
             --azul-claro: #A6E2E0;
             --morado: #A65ACF;
+            --color-fondo: #f8fafc;
+            --color-texto: #2d3748;
             --blanco: #ffffff;
-            --gris-oscuro: #2d3748;
+            --xx:#572364;
         }
-
-        body {
+    
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, var(--azul-fuerte), var(--verde-azulado));
-            color: var(--blanco);
+            color: var(--color-texto);
             line-height: 1.6;
         }
-
-        /* ====== ESTILOS DEL HEADER Y MENÚ ====== */
         header {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 20px 40px;
+            background: linear-gradient(135deg, var(--azul-claro) 0%, var(--xx) 100%);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 40px;
             position: sticky;
             top: 0;
-            backdrop-filter: blur(10px);
             z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            flex-wrap: wrap;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        
         .logo img {
             height: 60px;
             width: auto;
         }
-
+        
+        .language-buttons {
+            display: flex;
+            gap: 10px;
+            margin-right: 20px;
+        }
+        
+        .language-btn {
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .language-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .language-btn.active {
+            background-color: var(--morado);
+            font-weight: bold;
+        }
+    
         .menu-toggle {
             display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
-            z-index: 200;
+            z-index: 1000;
         }
-
+    
         .menu-toggle div {
             width: 25px;
             height: 3px;
@@ -58,112 +88,226 @@
             transition: 0.4s ease;
             transform-origin: center;
         }
-
+    
         .menu-toggle.active .bar1 {
             transform: rotate(45deg) translateY(8px);
         }
-
+    
         .menu-toggle.active .bar2 {
             opacity: 0;
         }
-
+    
         .menu-toggle.active .bar3 {
             transform: rotate(-45deg) translateY(-8px);
         }
-
-        nav {
+    
+        .nav {
             display: flex;
-            gap: 20px;
+            gap: 25px;
+            align-items: center;
         }
-
-        nav a {
+    
+        .nav a {
             color: var(--blanco);
             text-decoration: none;
             font-weight: 600;
-            padding: 8px 15px;
-            border-radius: 4px;
             transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
         }
-
-        nav a:hover {
+    
+        .nav a:hover {
             background-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
-
+    
         @media (max-width: 768px) {
+            .header {
+                flex-wrap: wrap;
+            }
+            
+            .language-buttons {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin: 10px 0;
+            }
+            
             .menu-toggle {
                 display: flex;
             }
-
-            nav {
+            
+            .nav {
                 flex-direction: column;
                 width: 100%;
                 max-height: 0;
                 overflow: hidden;
                 transition: max-height 0.5s ease;
             }
-
-            nav.open {
+            
+            .nav.open {
                 max-height: 300px;
             }
-
-            nav a {
+            
+            .nav a {
                 padding: 10px;
                 text-align: center;
                 border-top: 1px solid rgba(255, 255, 255, 0.2);
             }
         }
-        /* ====== FIN ESTILOS DEL MENU ====== */
-
-        main {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 40px;
-            animation: fadeIn 1s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h1 {
-            color: var(--azul-claro);
-            font-size: 2.8rem;
+        
+    
+        .hero {
+            background: transparent;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        h2 {
             color: var(--blanco);
-            font-size: 1.6rem;
-            margin-top: 30px;
+            padding: 0 20px;
         }
-
-        p {
+    
+        .hero h1 {
+            font-size: 3rem;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease forwards;
         }
-
-        ul {
-            padding-left: 20px;
+    
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+    
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--morado);
+            color: var(--blanco);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+    
+        .button:hover {
+            background-color: #8e4bb5;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+    
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--blanco);
+            font-size: 2.5rem;
+            position: relative;
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+    
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--verde-azulado);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+    
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+    
+        .card {
+            background: var(--blanco);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+    
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+    
+        .card h3 {
+            color: var(--verde-azulado);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+    
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
             margin-bottom: 20px;
+            max-height: 200px;
+            object-fit: cover;
         }
-
-        .resaltado {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-left: 5px solid var(--morado);
-            border-radius: 5px;
-            margin-top: 30px;
+    
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
         }
-
+    
+        .team-member {
+            background: var(--blanco);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--azul-claro);
+        }
+    
+        .team-member h3 {
+            color: var(--azul-fuerte);
+            margin-bottom: 5px;
+        }
+    
+        .team-member p {
+            color: var(--morado);
+            font-weight: 600;
+        }
+        
         footer {
-            background: rgba(0, 0, 0, 0.3);
+            background: var(--xx);
             padding: 40px 20px;
             margin-top: 80px;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .contact-info {
@@ -172,115 +316,272 @@
             gap: 30px;
             margin-bottom: 20px;
             flex-wrap: wrap;
+            color: var(--blanco);
         }
 
         .eslogan {
             font-style: italic;
-            color: var(--azul-claro);
+            color: var(--blanco);
             margin: 20px 0;
             font-size: 1.2rem;
         }
 
         .copyright {
-            color: var(--azul-claro);
+            color: var(--blanco);
             font-size: 0.9rem;
             margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 50px 15px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+        }
+    
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <header>
+
+    <header class="header">
         <div class="logo">
-            <a href="index.html"><img src="logo.ico" alt="XpertSolutions" width="250" height="70"></a>
+            <a href="index.html">
+                <img src="logo.ico" alt="XpertSolutions" width="250" height="70">
+            </a>
         </div>
+        
+        <div class="language-buttons">
+            <button class="language-btn active" id="esBtn">ES</button>
+            <button class="language-btn" id="enBtn">EN</button>
+        </div>
+        
         <div class="menu-toggle" onclick="toggleMenu()" id="toggleButton">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
-        <nav id="mobileMenu">
-            <a href="index.html">Inicio</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="sobrenosotros.html">Nosotros</a>
-            <a href="Contacto.html">Contáctanos</a>
+        <nav class="nav" id="mobileMenu">
+            <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+            <a href="sobrenosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a>
+            <a href="servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+            <a href="Contacto.html" data-es="Contáctanos" data-en="Contact">Contáctanos</a>
         </nav>
     </header>
 
-    <main>
-        <h1>¿Quiénes somos?</h1>
-        <p><strong>Xpert Solutions</strong> es un emprendimiento joven creado por un grupo de amigos apasionados por la tecnología. Nuestra misión es ayudar a empresas a crecer y modernizarse mediante soluciones digitales personalizadas.</p>
-
-        <p>Buscamos que la tecnología sea accesible, útil y centrada en las personas. Cada proyecto refleja nuestro deseo de innovar y nuestro compromiso con la calidad.</p>
-
-        <div class="resaltado">
-            <p><strong>Nos especializamos en:</strong></p>
-            <ul>
-                <li>🗄 Diseño y desarrollo de bases de datos</li>
-                <li>🧠 Análisis y diseño de sistemas informáticos</li>
-                <li>🌐 Portales web modernos y responsivos</li>
-                <li>📊 Automatización de procesos ofimáticos</li>
-                <li>🚀 Asesoramiento tecnológico empresarial</li>
-            </ul>
-        </div>
-
-        <p>Estamos aquí para crecer junto a nuestros clientes. Cuando tú avanzas, nosotros también lo hacemos.</p>
-
-        <section id="mision">
-            <h1>Misión</h1>
-            <p>Brindamos soluciones tecnológicas innovadoras y accesibles para pequeñas y medianas empresas, ayudándolas a aumentar su productividad.</p>
-
-            <h2>¿Cómo lo logramos?</h2>
-            <ul>
-                <li>Tecnología de vanguardia y accesible</li>
-                <li>Procesos y servicios en constante innovación</li>
-                <li>Asesoría personalizada para cada etapa empresarial</li>
-                <li>Soluciones escalables que evolucionan contigo</li>
-            </ul>
-
-            <h2>Compromisos</h2>
-            <p>Nos enfocamos en democratizar el acceso a herramientas tecnológicas útiles, comprensibles y eficaces para pequeñas y medianas empresas.</p>
-        </section>
-
-        <section id="valores">
-            <h1>Valores</h1>
-            <div class="resaltado">
+    <section id="mision">
+        <h2 class="section-title" data-es="Nuestra Identidad" data-en="Our Identity">Nuestra Identidad</h2>
+        
+        <div class="card-container">
+            <div class="card fade-in">
+                <img src="images/mision.jpg" alt="Diseño web">
+                <h3 data-es="Misión" data-en="Mission">Misión</h3>
+                <p data-es="Brindar soluciones tecnológicas, innovadoras y accesibles para pequeñas y medianas empresas, mejorando su productividad." 
+                   data-en="Provide innovative and affordable technological solutions for small and medium businesses, improving their productivity.">
+                   Brindar soluciones tecnológicas, innovadoras y accesibles para pequeñas y medianas empresas, mejorando su productividad.
+                </p>
+            </div>
+            
+            <div class="card fade-in delay-1">
+                <img src="images/vision.jpg" alt="Diseño web">
+                <h3 data-es="Visión" data-en="Vision">Visión</h3>
+                <p data-es="Ser un referente local de soluciones tecnológicas para pequeñas y medianas empresas, logrando acompañar a nuestros clientes en su crecimiento digital en los próximos años." 
+                   data-en="To be a local leader in technological solutions for small and medium businesses, supporting our clients in their digital growth in the coming years.">
+                   Ser un referente local de soluciones tecnológicas para pequeñas y medianas empresas, logrando acompañar a nuestros clientes en su crecimiento digital en los próximos años.
+                </p>
+            </div>
+            
+            <div class="card fade-in delay-2">
+                <img src="images/valores.jpg" alt="Diseño web">
+                <h3 data-es="Valores" data-en="Values">Valores</h3>
                 <ul>
-                    <li><strong>Responsabilidad:</strong> Nos hacemos cargo de cada proyecto con seriedad y compromiso.</li>
-                    <li><strong>Puntualidad:</strong> Cumplimos rigurosamente los plazos de entrega.</li>
-                    <li><strong>Excelencia:</strong> Nos esforzamos por ofrecer soluciones de alta calidad.</li>
-                    <li><strong>Trabajo en equipo:</strong> Fomentamos la colaboración y el apoyo entre profesionales.</li>
+                    <li data-es="Responsabilidad" data-en="Responsibility">Responsabilidad</li>
+                    <li data-es="Puntualidad" data-en="Punctuality">Puntualidad</li>
+                    <li data-es="Excelencia" data-en="Excellence">Excelencia</li>
+                    <li data-es="Trabajo en equipo" data-en="Teamwork">Trabajo en equipo</li>
                 </ul>
             </div>
+        </div>
+    </section>
 
-            <h2 style="color: var(--morado);">¿Por qué son importantes nuestros valores?</h2>
-            <ul>
-                <li>Construyen confianza con nuestros clientes</li>
-                <li>Elevan nuestros estándares de calidad</li>
-                <li>Crean un ambiente laboral saludable</li>
-                <li>Nos distinguen en el mercado</li>
-                <li>Contribuyen al éxito de nuestros clientes</li>
-            </ul>
-        </section>
-
-        <section id="vision">
-            <h1>Visión</h1>
-            <div class="resaltado">
-                <p>Queremos ser un referente local en soluciones tecnológicas para pymes. Acompañamos a nuestros clientes en su transformación digital, ayudándolos a adaptarse y prosperar en un entorno tecnológico en constante evolución.</p>
+    <section id="servicios" style="background-color: var(--azul-claro); padding: 80px 20px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title" data-es="Nuestros Servicios" data-en="Our Services">Nuestros Servicios</h2>
+            
+            <div class="card-container">
+                <div class="card fade-in">
+                    <img src="images/Consultoría tecnológica.jpg" alt="Consultoría tecnológica">
+                    <h3 data-es="Consultoría tecnológica" data-en="Technological Consulting">Consultoría tecnológica</h3>
+                    <p data-es="Automatización de procesos para optimizar la eficiencia operativa de tu empresa." 
+                       data-en="Process automation to optimize your company's operational efficiency.">
+                       Automatización de procesos para optimizar la eficiencia operativa de tu empresa.
+                    </p>
+                </div>
+                
+                <div class="card fade-in delay-1">
+                    <img src="images/Diseño Web.jpg" alt="Diseño web">
+                    <h3 data-es="Diseño web" data-en="Web Design">Diseño web</h3>
+                    <p data-es="Creación de portales y sitios web profesionales que mejoran tu presencia digital." 
+                       data-en="Creation of professional websites and portals that enhance your digital presence.">
+                       Creación de portales y sitios web profesionales que mejoran tu presencia digital.
+                    </p>
+                </div>
+                
+                <div class="card fade-in delay-2">
+                    <img src="images/Gestion de Datos.jpg" alt="Gestión de datos">
+                    <h3 data-es="Gestión de datos" data-en="Data Management">Gestión de datos</h3>
+                    <p data-es="Administración profesional de bases de datos para organizar tu información crítica." 
+                       data-en="Professional database management to organize your critical information.">
+                       Administración profesional de bases de datos para organizar tu información crítica.
+                    </p>
+                </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section id="objetivos">
+        <h2 class="section-title" data-es="Nuestros Objetivos" data-en="Our Objectives">Nuestros Objetivos</h2>
+        
+        <div class="card-container">
+            <div class="card fade-in">
+                <img src="images/corto.jpg" alt="Diseño web">
+                <h3 data-es="Corto plazo" data-en="Short term">Corto plazo</h3>
+                <p data-es="Dar a conocer la empresa, conseguir primeros clientes y mejorar nuestras habilidades y organización." 
+                   data-en="Promote the company, acquire first clients and improve our skills and organization.">
+                   Dar a conocer la empresa, conseguir primeros clientes y mejorar nuestras habilidades y organización.
+                </p>
+            </div>
+            
+            <div class="card fade-in delay-1">
+                <img src="images/mediano.jpg" alt="Diseño web">
+                <h3 data-es="Mediano plazo" data-en="Medium term">Mediano plazo</h3>
+                <p data-es="Posicionarnos en el mercado como una de las empresas que brinde mayor solución a las necesidades de los clientes." 
+                   data-en="Position ourselves in the market as one of the companies that provides the best solutions to customer needs.">
+                   Posicionarnos en el mercado como una de las empresas que brinde mayor solución a las necesidades de los clientes.
+                </p>
+            </div>
+            
+            <div class="card fade-in delay-2">
+                <img src="images/largo.jpg" alt="Diseño web">
+                <h3 data-es="Largo plazo" data-en="Long term">Largo plazo</h3>
+                <p data-es="Expandir nuestros servicios a grandes corporaciones y consolidarnos a nivel nacional." 
+                   data-en="Expand our services to large corporations and consolidate nationally.">
+                   Expandir nuestros servicios a grandes corporaciones y consolidarnos a nivel nacional.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" style="background-color: var(--verde-azulado); color: var(--blanco); padding: 80px 20px;">
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title" style="color: var(--blanco);" data-es="Contáctanos" data-en="Contact Us">Contáctanos</h2>
+            
+            <div style="margin-top: 30px; font-size: 1.2rem;">
+                <p><strong data-es="Teléfono:" data-en="Phone:">Teléfono:</strong>(809) 000-3111</p>
+                <p><strong data-es="Email:" data-en="Email:">Email:</strong>xpertsolutions@gmail.com</p>
+                <p><strong data-es="Sitio web:" data-en="Website:">Sitio web:</strong> xpertsolutions.com</p>
+            </div>
+            
+            <a href="https://wa.me/18099943776" class="button" style="margin-top: 30px; background-color: var(--morado);" target="_blank" data-es="Envíanos un mensaje" data-en="Send us a message">
+                Envíanos un mensaje
+            </a>
+        </div>
+    </section>
 
     <footer>
         <div class="contact-info">
-            <p><strong>Teléfono:</strong> (809) 994 3776</p>
-            <p><strong>Email:</strong> xpertsolutions@gmail.com</p>
-            <p><strong>Sitio web:</strong> xpertsolutions.com</p>
+            <p><strong data-es="Teléfono:" data-en="Phone:">Teléfono:</strong> (809) 000-3111</p>
+            <p><strong data-es="Email:" data-en="Email:">Email:</strong> xpertsolutions@gmail.com</p>
+            <p><strong data-es="Sitio web:" data-en="Website:">Sitio web:</strong> xpertsolutions.com</p>
         </div>
-        <p class="eslogan">"SOLUCIONES DIGITALES, RESULTADOS REALES"</p>
-        <p class="copyright">&copy; 2025 XpertSolutions. Todos los derechos reservados.</p>
+        <p class="eslogan" data-es="SOLUCIONES DIGITALES, RESULTADOS REALES" data-en="DIGITAL SOLUTIONS, REAL RESULTS">"SOLUCIONES DIGITALES, RESULTADOS REALES"</p>
+        <p class="copyright">&copy; 2025 XpertSolutions. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
     </footer>
 
     <script>
+        // Función para cambiar el idioma
+        function changeLanguage(lang) {
+            const esBtn = document.getElementById('esBtn');
+            const enBtn = document.getElementById('enBtn');
+            
+            // Cambiar clases activas
+            if (lang === 'es') {
+                esBtn.classList.add('active');
+                enBtn.classList.remove('active');
+                document.documentElement.lang = 'es';
+            } else {
+                enBtn.classList.add('active');
+                esBtn.classList.remove('active');
+                document.documentElement.lang = 'en';
+            }
+            
+            // Cambiar el contenido del texto
+            document.querySelectorAll('[data-es], [data-en]').forEach(element => {
+                if (lang === 'es') {
+                    if (element.hasAttribute('data-es')) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.placeholder = element.getAttribute('data-es');
+                        } else {
+                            element.textContent = element.getAttribute('data-es');
+                        }
+                    }
+                } else {
+                    if (element.hasAttribute('data-en')) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.placeholder = element.getAttribute('data-en');
+                        } else {
+                            element.textContent = element.getAttribute('data-en');
+                        }
+                    }
+                }
+            });
+            
+            // Guardar preferencia de idioma
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Event listeners para los botones de idioma
+        document.getElementById('esBtn').addEventListener('click', function() {
+            changeLanguage('es');
+        });
+
+        document.getElementById('enBtn').addEventListener('click', function() {
+            changeLanguage('en');
+        });
+
+        // Cargar idioma preferido al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const preferredLanguage = localStorage.getItem('preferredLanguage') || 'es';
+            changeLanguage(preferredLanguage);
+        });
+
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             const toggle = document.getElementById('toggleButton');

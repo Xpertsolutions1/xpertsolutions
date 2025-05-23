@@ -3,44 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo.ico" type="image/x-icon">
-    <title>Contáctanos - Xpert Solutions</title>
+    <link rel="icon" href="X..png" type="image/x-icon">
+    <title>Contáctanos</title>
     <style>
         :root {
             --verde-azulado: #2CA6A4;
             --azul-fuerte: #1336BF;
             --azul-claro: #A6E2E0;
             --morado: #A65ACF;
+            --color-fondo: #f8fafc;
+            --color-texto: #2d3748;
             --blanco: #ffffff;
-            --gris-oscuro: #2d3748;
+            --xx:#572364;
         }
 
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--azul-fuerte), var(--verde-azulado));
+            background: linear-gradient(135deg, var(--azul-claro) 0%, var(--xx) 100%);
             color: var(--blanco);
             line-height: 1.6;
         }
 
-        /* ====== HEADER + MENÚ ====== */
         header {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 20px 40px;
+            background: linear-gradient(135deg, var(--azul-claro) 0%, var(--xx) 100%);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 40px;
             position: sticky;
             top: 0;
-            backdrop-filter: blur(10px);
             z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            flex-wrap: wrap;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .logo img {
             height: 60px;
             width: auto;
+        }
+
+        .language-buttons {
+            display: flex;
+            gap: 10px;
+            margin-right: 20px;
+        }
+
+        .language-btn {
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .language-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .language-btn.active {
+            background-color: var(--morado);
+            font-weight: bold;
         }
 
         .menu-toggle {
@@ -74,6 +99,7 @@
         nav {
             display: flex;
             gap: 20px;
+            align-items: center;
         }
 
         nav a {
@@ -91,6 +117,13 @@
         }
 
         @media (max-width: 768px) {
+            .language-buttons {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin: 10px 0;
+            }
+
             .menu-toggle {
                 display: flex;
             }
@@ -113,7 +146,7 @@
                 border-top: 1px solid rgba(255, 255, 255, 0.2);
             }
         }
-        /* ====== FIN HEADER + MENÚ ====== */
+        
 
         main {
             max-width: 1000px;
@@ -128,7 +161,7 @@
         }
 
         h1 {
-            color: var(--azul-claro);
+            color: var(--blanco);
             font-size: 2.8rem;
             text-align: center;
             margin-bottom: 40px;
@@ -273,22 +306,29 @@
         }
 
         footer {
-            background: rgba(0, 0, 0, 0.3);
+            background: var(--xx);
             padding: 40px 20px;
             margin-top: 80px;
             text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .eslogan {
             font-style: italic;
-            color: var(--azul-claro);
+            color: var(--blanco);
             margin: 20px 0;
             font-size: 1.2rem;
         }
 
         .copyright {
-            color: var(--azul-claro);
+            color: var(--blanco);
             font-size: 0.9rem;
             margin-top: 20px;
         }
@@ -297,120 +337,131 @@
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="logo.ico" alt="XpertSolutions" width="250" height="70"></a>
+            <a href="index.html"><img src="logo.ico" alt="XpertSolutions"></a>
         </div>
+        
+        <div class="language-buttons">
+            <button class="language-btn active" id="esBtn">ES</button>
+            <button class="language-btn" id="enBtn">EN</button>
+        </div>
+        
         <div class="menu-toggle" onclick="toggleMenu()" id="toggleButton">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
         <nav id="mobileMenu">
-            <a href="index.html">Inicio</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="sobrenosotros.html">Nosotros</a>
-            <a href="Contacto.html">Contáctanos</a>
+            <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+            <a href="sobrenosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a>
+            <a href="servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+            <a href="Contacto.html" data-es="Contáctanos" data-en="Contact">Contáctanos</a>
         </nav>
     </header>
 
     <main>
-        <h1>Contáctanos</h1>
-        <p>En Xpert Solutions estamos listos para ayudarte con tus necesidades tecnológicas. Completa el formulario y nos pondremos en contacto contigo a la brevedad, o si lo prefieres, utiliza cualquiera de nuestros otros medios de contacto.</p>
+        <h1 data-es="Contáctanos" data-en="Contact Us">Contáctanos</h1>
+        <p data-es="En Xpert Solutions estamos listos para ayudarte con tus necesidades tecnológicas. Completa el formulario y nos pondremos en contacto contigo a la brevedad, o si lo prefieres, utiliza cualquiera de nuestros otros medios de contacto." 
+           data-en="At Xpert Solutions we are ready to help you with your technological needs. Complete the form and we will contact you shortly, or if you prefer, use any of our other contact methods.">
+           En Xpert Solutions estamos listos para ayudarte con tus necesidades tecnológicas. Completa el formulario y nos pondremos en contacto contigo a la brevedad, o si lo prefieres, utiliza cualquiera de nuestros otros medios de contacto.
+        </p>
 
         <div class="success-message" id="successMessage">
-            <p>¡Gracias por contactarnos! Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.</p>
+            <p data-es="¡Gracias por contactarnos! Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto." 
+               data-en="Thank you for contacting us! We have received your message and will get back to you soon.">
+               ¡Gracias por contactarnos! Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.
+            </p>
         </div>
 
         <div class="contact-container">
             <div class="contact-form">
-                <h2>Envíanos un mensaje</h2>
-                <form id="contactForm">
+                <h2 data-es="Envíanos un mensaje" data-en="Send us a message">Envíanos un mensaje</h2>
+                <form id="contactForm" action="enviar.php" method="post">
                     <div class="form-group">
-                        <label for="name">Nombre completo</label>
+                        <label for="name" data-es="Nombre completo" data-en="Full name">Nombre completo</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">Correo electrónico</label>
+                        <label for="email" data-es="Correo electrónico" data-en="Email">Correo electrónico</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="phone">Teléfono (opcional)</label>
+                        <label for="phone" data-es="Teléfono (opcional)" data-en="Phone (optional)">Teléfono (opcional)</label>
                         <input type="tel" id="phone" name="phone">
                     </div>
                     
-                    <div class="form-group" >
-                        <label for="service">Servicio de interés</label>
+                    <div class="form-group">
+                        <label for="service" data-es="Servicio de interés" data-en="Service of interest">Servicio de interés</label>
                         <select id="service" name="service">
-                            <option value="" style="color: black; font-style: black;">Selecciona un servicio</option>
-                            <option value="bases-datos" style="color: black; font-style: black;">Diseño de bases de datos</option>
-                            <option value="sistemas" style="color: black; font-style: black;">Análisis y diseño de sistemas</option>
-                            <option value="web" style="color: black; font-style: black;">Desarrollo web</option>
-                            <option value="automatizacion" style="color: black; font-style: black;">Automatización de procesos</option>
-                            <option value="asesoramiento" style="color: black; font-style: black;">Asesoramiento tecnológico</option>
-                            <option value="otro" style="color: black; font-style: black;">Otro</option>
+                            <option value="" style="color: black;" data-es="Selecciona un servicio" data-en="Select a service">Selecciona un servicio</option>
+                            <option value="bases-datos" style="color: black;" data-es="Rediseño de Sitios Web" data-en="Website Redesign">Rediseño de Sitios Web</option>
+                            <option value="web" style="color: black;" data-es="Gestion de Datos" data-en="Data Management">Gestion de Datos</option>
+                            <option value="automatizacion" style="color: black;" data-es="Diseño de Multimedia" data-en="Multimedia Design">Diseño de Multimedia</option>
+                            <option value="asesoramiento" style="color: black;" data-es="Consultoría tecnológico" data-en="Technological Consulting">Consultoría tecnológico</option>
+                            <option value="otro" style="color: black;" data-es="Otro" data-en="Other">Otro</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
-                        <label for="message">Mensaje</label>
+                        <label for="message" data-es="Mensaje" data-en="Message">Mensaje</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
                     
-                    <button type="submit">Enviar mensaje</button>
+                    <button type="submit" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</button>
                 </form>
             </div>
             
             <div class="contact-info">
-                <h2>Información de contacto</h2>
+                <h2 data-es="Información de contacto" data-en="Contact information">Información de contacto</h2>
                 
                 <div class="contact-method">
                     <div class="contact-icon">📞</div>
                     <div class="contact-details">
-                        <h3>Teléfono</h3>
-                        <p>(809) 994-3776</p>
-                        <p>Lunes a Viernes, 9:00 AM - 6:00 PM</p>
+                        <h3 data-es="Teléfono" data-en="Phone">Teléfono</h3>
+                        <p>(809) 000-3111</p>
+                        <p data-es="Lunes a Viernes, 9:00 AM - 6:00 PM" data-en="Monday to Friday, 9:00 AM - 6:00 PM">Lunes a Viernes, 9:00 AM - 6:00 PM</p>
                     </div>
                 </div>
                 
                 <div class="contact-method">
-                    <div class="contact-icon">✉</div>
+                    <div class="contact-icon">✉️</div>
                     <div class="contact-details">
-                        <h3>Correo electrónico</h3>
+                        <h3 data-es="Correo electrónico" data-en="Email">Correo electrónico</h3>
                         <p>xpertsolutions@gmail.com</p>
-                        <p>Respuesta en menos de 24 horas</p>
+                        <p data-es="Respuesta en menos de 24 horas" data-en="Response in less than 24 hours">Respuesta en menos de 24 horas</p>
                     </div>
                 </div>
                 
                 <div class="contact-method">
                     <div class="contact-icon">🌐</div>
                     <div class="contact-details">
-                        <h3>Sitio web</h3>
+                        <h3 data-es="Sitio web" data-en="Website">Sitio web</h3>
                         <p>www.xpertsolutions.com</p>
-                        <p>Visita nuestro sitio para más información</p>
+                        <p data-es="Visita nuestro sitio para más información" data-en="Visit our website for more information">Visita nuestro sitio para más información</p>
                     </div>
                 </div>
                 
                 <div class="contact-method">
                     <div class="contact-icon">📍</div>
                     <div class="contact-details">
-                        <h3>Dirección</h3>
-                        <p>Calle Principal #123, Santo Domingo</p>
-                        <p>República Dominicana</p>
+                        <h3 data-es="Dirección" data-en="Address">Dirección</h3>
+                        <p data-es="Calle Principal #123, Santo Domingo" data-en="Main Street #123, Santo Domingo">Calle Principal #123, Santo Domingo</p>
+                        <p data-es="República Dominicana" data-en="Dominican Republic">República Dominicana</p>
                     </div>
                 </div>
                 
                 <div class="resaltado">
-                    <p><strong>Horario de atención:</strong></p>
-                    <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-                    <p>Sábados: 10:00 AM - 2:00 PM (solo citas)</p>
-                    <p>Domingos: Cerrado</p>
+                    <p><strong data-es="Horario de atención:" data-en="Business hours:">Horario de atención:</strong></p>
+                    <p data-es="Lunes a Viernes: 9:00 AM - 6:00 PM" data-en="Monday to Friday: 9:00 AM - 6:00 PM">Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                    <p data-es="Sábados: 10:00 AM - 2:00 PM (solo citas)" data-en="Saturdays: 10:00 AM - 2:00 PM (by appointment only)">Sábados: 10:00 AM - 2:00 PM (solo citas)</p>
+                    <p data-es="Domingos: Cerrado" data-en="Sundays: Closed">Domingos: Cerrado</p>
                 </div>
             </div>
         </div>
         
         <div class="map-container">
-            <h2 style="color:white; font-size: 40px; font-style: white;">¿Dónde estamos ubicados?</h2>
+            <h2 style="color:white; font-size: 40px;" data-es="¿Dónde estamos ubicados?" data-en="Where are we located?">¿Dónde estamos ubicados?</h2>
             <iframe 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.673036739687!2d-69.93371402400267!3d18.491828082558494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf899600a0ea83%3A0xadc6a33215fefbf1!2sCentro%20Educativo%20Nuestra%20Se%C3%B1ora%20de%20la%20Fe!5e0!3m2!1ses!2sdo!4v1714665000000!5m2!1ses!2sdo" 
             width="600" 
@@ -420,22 +471,92 @@
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
-          
         </div>
     </main>
 
-    
     <footer>
-        <div class="contact-info">
-            <p><strong>Teléfono:</strong> (809) 994 3776</p>
-            <p><strong>Email:</strong> xpertsolutions@gmail.com</p>
-            <p><strong>Sitio web:</strong> xpertsolutions.com</p>
+        <div class="footer-info">
+            <p><strong data-es="Teléfono:" data-en="Phone:">Teléfono:</strong> (809) 000-3111</p>
+            <p><strong data-es="Email:" data-en="Email:">Email:</strong> xpertsolutions@gmail.com</p>
+            <p><strong data-es="Sitio web:" data-en="Website:">Sitio web:</strong> xpertsolutions.com</p>
         </div>
-        <p class="eslogan">"SOLUCIONES DIGITALES, RESULTADOS REALES"</p>
-        <p class="copyright">&copy; 2025 XpertSolutions. Todos los derechos reservados.</p>
+        <p class="eslogan" data-es="SOLUCIONES DIGITALES, RESULTADOS REALES" data-en="DIGITAL SOLUTIONS, REAL RESULTS">"SOLUCIONES DIGITALES, RESULTADOS REALES"</p>
+        <p class="copyright">&copy; 2025 XpertSolutions. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
     </footer>
 
     <script>
+        // Función para cambiar el idioma
+        function changeLanguage(lang) {
+            const esBtn = document.getElementById('esBtn');
+            const enBtn = document.getElementById('enBtn');
+            
+            // Cambiar clases activas
+            if (lang === 'es') {
+                esBtn.classList.add('active');
+                enBtn.classList.remove('active');
+                document.documentElement.lang = 'es';
+            } else {
+                enBtn.classList.add('active');
+                esBtn.classList.remove('active');
+                document.documentElement.lang = 'en';
+            }
+            
+            // Cambiar el contenido del texto
+            document.querySelectorAll('[data-es], [data-en]').forEach(element => {
+                if (lang === 'es') {
+                    if (element.hasAttribute('data-es')) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' || element.tagName === 'SELECT') {
+                            element.placeholder = element.getAttribute('data-es');
+                            if (element.tagName === 'SELECT') {
+                                const options = element.querySelectorAll('option');
+                                options.forEach(option => {
+                                    if (option.hasAttribute('data-es')) {
+                                        option.textContent = option.getAttribute('data-es');
+                                    }
+                                });
+                            }
+                        } else {
+                            element.textContent = element.getAttribute('data-es');
+                        }
+                    }
+                } else {
+                    if (element.hasAttribute('data-en')) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' || element.tagName === 'SELECT') {
+                            element.placeholder = element.getAttribute('data-en');
+                            if (element.tagName === 'SELECT') {
+                                const options = element.querySelectorAll('option');
+                                options.forEach(option => {
+                                    if (option.hasAttribute('data-en')) {
+                                        option.textContent = option.getAttribute('data-en');
+                                    }
+                                });
+                            }
+                        } else {
+                            element.textContent = element.getAttribute('data-en');
+                        }
+                    }
+                }
+            });
+            
+            // Guardar preferencia de idioma
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Event listeners para los botones de idioma
+        document.getElementById('esBtn').addEventListener('click', function() {
+            changeLanguage('es');
+        });
+
+        document.getElementById('enBtn').addEventListener('click', function() {
+            changeLanguage('en');
+        });
+
+        // Cargar idioma preferido al cargar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const preferredLanguage = localStorage.getItem('preferredLanguage') || 'es';
+            changeLanguage(preferredLanguage);
+        });
+
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             const toggle = document.getElementById('toggleButton');
@@ -454,4 +575,4 @@
         });
     </script>
 </body>
-                            </html>
+</html>

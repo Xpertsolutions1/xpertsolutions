@@ -1,287 +1,380 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Servicios - XpertSolutions</title>
-  <link rel="icon" href="logo.ico" type="image/x-icon">
-  <style>
-    :root {
-      --verde-azulado: #2CA6A4;
-      --azul-fuerte: #1336BF;
-      --azul-claro: #A6E2E0;
-      --morado: #A65ACF;
-      --blanco: #ffffff;
-      --gris-oscuro: #2d3748;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, var(--azul-fuerte), var(--verde-azulado));
-      color: var(--blanco);
-      line-height: 1.6;
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.2);
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      backdrop-filter: blur(10px);
-      z-index: 100;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      flex-wrap: wrap;
-    }
-
-    .logo img {
-      height: 60px;
-      width: auto;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      z-index: 200;
-    }
-
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background: white;
-      transition: 0.4s ease;
-      transform-origin: center;
-    }
-
-    .menu-toggle.active .bar1 {
-      transform: rotate(45deg) translateY(8px);
-    }
-
-    .menu-toggle.active .bar2 {
-      opacity: 0;
-    }
-
-    .menu-toggle.active .bar3 {
-      transform: rotate(-45deg) translateY(-8px);
-    }
-
-    nav {
-      display: flex;
-      gap: 20px;
-    }
-
-    nav a {
-      color: var(--blanco);
-      text-decoration: none;
-      font-weight: 600;
-      padding: 8px 15px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 40px;
-      animation: fadeIn 1s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1 {
-      color: var(--azul-claro);
-      font-size: 2.8rem;
-      text-align: center;
-      margin-bottom: 40px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .servicios-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .servicio {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      padding: 30px;
-      border-left: 5px solid var(--morado);
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .servicio:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-      background-color: rgba(255, 255, 255, 0.15);
-    }
-
-    .servicio h3 {
-      color: var(--azul-claro);
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-    }
-
-    .servicio p {
-      margin-bottom: 0;
-    }
-
-    .servicio-icon {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: var(--morado);
-    }
-
-    footer {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 40px 20px;
-      margin-top: 80px;
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .contact-info p {
-      margin: 0;
-    }
-
-    .eslogan {
-      font-style: italic;
-      color: var(--azul-claro);
-      margin: 20px 0;
-      font-size: 1.2rem;
-    }
-
-    .copyright {
-      color: var(--azul-claro);
-      font-size: 0.9rem;
-      margin-top: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - XpertSolutions</title>
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+    <style>
+      :root {
+        --verde-azulado: #2CA6A4;
+        --azul-fuerte: #1336BF;
+        --azul-claro: #A6E2E0;
+        --morado: #A65ACF;
+        --blanco: #ffffff;
+        --gris-oscuro: #2d3748;
+        --xx: #572364;
+      }
+  
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, var(--azul-fuerte), var(--verde-azulado));
+        color: var(--blanco);
+        line-height: 1.6;
+      }
+  
+      header {
+        background: linear-gradient(135deg, var(--azul-claro) 0%, var(--xx) 100%);
+        padding: 20px 40px;
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        flex-wrap: wrap;
+      }
+  
+      .logo img {
+        height: 60px;
+        width: auto;
       }
 
-      nav {
-        flex-direction: column;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
-      }
-
-      nav.open {
-        max-height: 300px;
-      }
-
-      nav a {
-        padding: 10px;
-        text-align: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-      }
-
-      main {
-        padding: 0 20px;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .contact-info {
-        flex-direction: column;
+      .language-buttons {
+        display: flex;
         gap: 10px;
+        margin-right: 20px;
       }
 
-      .servicios-grid {
-        grid-template-columns: 1fr;
+      .language-btn {
+        padding: 5px 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
       }
-    }
-  </style>
+
+      .language-btn:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .language-btn.active {
+        background-color: var(--morado);
+        font-weight: bold;
+      }
+  
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 200;
+      }
+  
+      .menu-toggle div {
+        width: 25px;
+        height: 3px;
+        background: white;
+        transition: 0.4s ease;
+        transform-origin: center;
+      }
+  
+      .menu-toggle.active .bar1 {
+        transform: rotate(45deg) translateY(8px);
+      }
+  
+      .menu-toggle.active .bar2 {
+        opacity: 0;
+      }
+  
+      .menu-toggle.active .bar3 {
+        transform: rotate(-45deg) translateY(-8px);
+      }
+  
+      nav {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+  
+      nav a {
+        color: var(--blanco);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 8px 15px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+  
+      nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+  
+      main {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 40px;
+        animation: fadeIn 1s ease-out;
+      }
+  
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+  
+      h1 {
+        color: var(--azul-claro);
+        font-size: 2.8rem;
+        text-align: center;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+  
+      .servicios-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+  
+      .servicio {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 30px;
+        border-left: 5px solid var(--morado);
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+  
+      .servicio:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+  
+      .servicio h3 {
+        color: var(--azul-claro);
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+      }
+  
+      .servicio p {
+        margin-bottom: 0;
+      }
+  
+      .servicio-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: var(--morado);
+      }
+  
+      footer {
+        background: var(--xx);
+        padding: 40px 20px;
+        margin-top: 80px;
+        text-align: center;
+      }
+  
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+  
+      .contact-info p {
+        margin: 0;
+      }
+  
+      .eslogan {
+        font-style: italic;
+        color: var(--blanco);
+        margin: 20px 0;
+        font-size: 1.2rem;
+      }
+  
+      .copyright {
+        color: var(--blanco);
+        font-size: 0.9rem;
+        margin-top: 20px;
+      }
+  
+      @media (max-width: 768px) {
+        .language-buttons {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+          margin: 10px 0;
+        }
+
+        .menu-toggle {
+          display: flex;
+        }
+  
+        nav {
+          flex-direction: column;
+          width: 100%;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.5s ease;
+        }
+  
+        nav.open {
+          max-height: 300px;
+        }
+  
+        nav a {
+          padding: 10px;
+          text-align: center;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+  
+        main {
+          padding: 0 20px;
+        }
+  
+        h1 {
+          font-size: 2rem;
+        }
+  
+        .contact-info {
+          flex-direction: column;
+          gap: 10px;
+        }
+  
+        .servicios-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
 </head>
 <body>
-
-  <header>
-    <div class="logo">
-      <a href="index.html"><img src="logo.ico" alt="XpertSolutions" width="250" height="70"></a>
-    </div>
-
-    <div class="menu-toggle" onclick="toggleMenu()" id="toggleButton">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
-
-    <nav id="mobileMenu">
-      <a href="index.html">Inicio</a>
-      <a href="servicios.html">Servicios</a>
-      <a href="sobrenosotros.html">Nosotros</a>
-      <a href="Contacto.html">Contáctanos</a>
-    </nav>
-  </header>
-
-  <main>
-    <h1>Nuestros Servicios</h1>
-    <div class="servicios-grid">
-      <div class="servicio">
-        <div class="servicio-icon">💼</div>
-        <h3>Consultoría Tecnológica</h3>
-        <p>Brindamos asesoría especializada en automatización de procesos para optimizar la eficiencia operativa de tu empresa.</p>
+    <header>
+      <div class="logo">
+        <a href="index.html"><img src="logo.ico" alt="XpertSolutions" width="250" height="70"></a>
       </div>
-      <div class="servicio">
-        <div class="servicio-icon">🖥️</div>
-        <h3>Diseño Web</h3>
-        <p>Creación de portales y sitios web profesionales que mejoran tu presencia digital y atraen más clientes.</p>
+
+      <div class="language-buttons">
+        <button class="language-btn active" id="esBtn">ES</button>
+        <button class="language-btn" id="enBtn">EN</button>
       </div>
-      <div class="servicio">
-        <div class="servicio-icon">🗃️</div>
-        <h3>Administración de Bases de Datos</h3>
-        <p>Gestión profesional de bases de datos para organizar y proteger tu información crítica.</p>
+  
+      <div class="menu-toggle" onclick="toggleMenu()" id="toggleButton">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
       </div>
-    </div>
-  </main>
+  
+      <nav id="mobileMenu">
+        <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+        <a href="sobrenosotros.html" data-es="Nosotros" data-en="About Us">Nosotros</a>
+        <a href="servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+        <a href="Contacto.html" data-es="Contáctanos" data-en="Contact">Contáctanos</a>
+      </nav>
+    </header>
+  
+    <main>
+      <h1 data-es="Nuestros Servicios" data-en="Our Services">Nuestros Servicios</h1>
+      <div class="servicios-grid">
+        <div class="servicio">
+          <div class="servicio-icon">💼</div>
+          <h3 data-es="Consultoría Tecnológica" data-en="Technology Consulting">Consultoría Tecnológica</h3>
+          <p data-es="Brindamos asesoría especializada en automatización de procesos para optimizar la eficiencia operativa de tu empresa." 
+             data-en="We provide specialized advice on process automation to optimize your company's operational efficiency.">
+             Brindamos asesoría especializada en automatización de procesos para optimizar la eficiencia operativa de tu empresa.
+          </p>
+        </div>
+        <div class="servicio">
+          <div class="servicio-icon">🖥️</div>
+          <h3 data-es="Diseño Web" data-en="Web Design">Diseño Web</h3>
+          <p data-es="Creación de portales y sitios web profesionales que mejoran tu presencia digital y atraen más clientes." 
+             data-en="Creation of professional websites and portals that enhance your digital presence and attract more customers.">
+             Creación de portales y sitios web profesionales que mejoran tu presencia digital y atraen más clientes.
+          </p>
+        </div>
+        <div class="servicio">
+          <div class="servicio-icon">🗃️</div>
+          <h3 data-es="Administración de Bases de Datos" data-en="Database Management">Administración de Bases de Datos</h3>
+          <p data-es="Gestión profesional de bases de datos para organizar y proteger tu información crítica." 
+             data-en="Professional database management to organize and protect your critical information.">
+             Gestión profesional de bases de datos para organizar y proteger tu información crítica.
+          </p>
+        </div>
+      </div>
+    </main>
+  
+    <footer>
+      <div class="contact-info">
+        <p><strong data-es="Teléfono:" data-en="Phone:">Teléfono:</strong> (809) 994 3776</p>
+        <p><strong data-es="Email:" data-en="Email:">Email:</strong> xpertsolutions@gmail.com</p>
+        <p><strong data-es="Sitio web:" data-en="Website:">Sitio web:</strong> xpertsolutions.com</p>
+      </div>
+      <p class="eslogan" data-es="SOLUCIONES DIGITALES, RESULTADOS REALES" data-en="DIGITAL SOLUTIONS, REAL RESULTS">"SOLUCIONES DIGITALES, RESULTADOS REALES"</p>
+      <p class="copyright">© 2025 XpertSolutions. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+    </footer>
+  
+    <script>
+      // Función para cambiar el idioma
+      function changeLanguage(lang) {
+        const esBtn = document.getElementById('esBtn');
+        const enBtn = document.getElementById('enBtn');
+        
+        // Cambiar clases activas
+        if (lang === 'es') {
+          esBtn.classList.add('active');
+          enBtn.classList.remove('active');
+          document.documentElement.lang = 'es';
+        } else {
+          enBtn.classList.add('active');
+          esBtn.classList.remove('active');
+          document.documentElement.lang = 'en';
+        }
+        
+        // Cambiar el contenido del texto
+        document.querySelectorAll('[data-es], [data-en]').forEach(element => {
+          if (lang === 'es') {
+            if (element.hasAttribute('data-es')) {
+              element.textContent = element.getAttribute('data-es');
+            }
+          } else {
+            if (element.hasAttribute('data-en')) {
+              element.textContent = element.getAttribute('data-en');
+            }
+          }
+        });
+        
+        // Guardar preferencia de idioma
+        localStorage.setItem('preferredLanguage', lang);
+      }
 
-  <footer>
-    <div class="contact-info">
-      <p><strong>Teléfono:</strong> (809) 994 3776</p>
-      <p><strong>Email:</strong> xpertsolutions@gmail.com</p>
-      <p><strong>Sitio web:</strong> xpertsolutions.com</p>
-    </div>
-    <p class="eslogan">"SOLUCIONES DIGITALES, RESULTADOS REALES"</p>
-    <p class="copyright">&copy; 2025 XpertSolutions. Todos los derechos reservados.</p>
-  </footer>
+      // Event listeners para los botones de idioma
+      document.getElementById('esBtn').addEventListener('click', function() {
+        changeLanguage('es');
+      });
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      const toggle = document.getElementById('toggleButton');
-      menu.classList.toggle('open');
-      toggle.classList.toggle('active');
-    }
-  </script>
+      document.getElementById('enBtn').addEventListener('click', function() {
+        changeLanguage('en');
+      });
 
+      // Cargar idioma preferido al cargar la página
+      document.addEventListener('DOMContentLoaded', function() {
+        const preferredLanguage = localStorage.getItem('preferredLanguage') || 'es';
+        changeLanguage(preferredLanguage);
+      });
+
+      function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const toggle = document.getElementById('toggleButton');
+        menu.classList.toggle('open');
+        toggle.classList.toggle('active');
+      }
+    </script>
 </body>
 </html>

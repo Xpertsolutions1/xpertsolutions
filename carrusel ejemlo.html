@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="X..png" type="image/x-icon">
+    <link rel="icon" href="images/X solutions.png" type="image/x-icon">
     <title>XpertSolutions - Soluciones Digitales, Resultados Reales</title>
     <style>
         :root {
@@ -30,6 +30,7 @@
             background-color: var(--verde-azulado);
             color: var(--color-texto);
             line-height: 1.6;
+
         }
 
         .header {
@@ -47,31 +48,6 @@
         .logo img {
             height: 60px;
             width: auto;
-        }
-
-        .language-buttons {
-            display: flex;
-            gap: 10px;
-            margin-right: 20px;
-        }
-
-        .language-btn {
-            padding: 5px 10px;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .language-btn:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .language-btn.active {
-            background-color: var(--morado);
-            font-weight: bold;
         }
 
         .menu-toggle {
@@ -105,7 +81,6 @@
         .nav {
             display: flex;
             gap: 25px;
-            align-items: center;
         }
 
         .nav a {
@@ -196,6 +171,7 @@
             display: flex;
             transition: transform 0.5s ease-in-out;
             height: 500px;
+            
         }
 
         .carrusel-slide {
@@ -305,7 +281,7 @@
         }
 
         footer {
-            background: var(--xx);
+            background: linear-gradient(135deg, var(--azul-claro) 0%, var(--morado) 100%);
             padding: 40px 20px;
             margin-top: 80px;
             text-align: center;
@@ -339,13 +315,6 @@
         @media (max-width: 768px) {
             .header {
                 flex-wrap: wrap;
-            }
-            
-            .language-buttons {
-                order: 3;
-                width: 100%;
-                justify-content: center;
-                margin: 10px 0;
             }
             
             .menu-toggle {
@@ -411,12 +380,6 @@
                 <img src="logo.ico" alt="XpertSolutions" width="250" height="70">
             </a>
         </div>
-        
-        <div class="language-buttons">
-            <button class="language-btn active" id="esBtn">ES</button>
-            <button class="language-btn" id="enBtn">EN</button>
-        </div>
-        
         <div class="menu-toggle" onclick="toggleMenu()" id="toggleButton">
             <div class="bar1"></div>
             <div class="bar2"></div>
@@ -443,6 +406,7 @@
             <div class="carrusel-progress"></div>
             
             <div class="carrusel">
+                <!-- Slide 1 -->
                 <div class="carrusel-slide">
                     <img src="images/mision.jpg" alt="Consultoría tecnológica" class="carrusel-img">
                     <div class="carrusel-content">
@@ -451,6 +415,7 @@
                     </div>
                 </div>
                 
+                <!-- Slide 2 -->
                 <div class="carrusel-slide">
                     <img src="images/mediano.jpg" alt="Desarrollo web" class="carrusel-img">
                     <div class="carrusel-content">
@@ -459,35 +424,66 @@
                     </div>
                 </div>
                 
+                <!-- Slide 3 -->
                 <div class="carrusel-slide">
-                    <img src="images/corto.jpg" alt="Gestión de base de datos" class="carrusel-img">
+                    <img src="images/corto.jpg" alt="Gestión de datos" class="carrusel-img">
                     <div class="carrusel-content">
-                        <h3>Gestión de base de Datos</h3>
+                        <h3>Gestión de Datos</h3>
                         <p>Soluciones integrales para la organización, almacenamiento y análisis de datos críticos para su negocio.</p>
                     </div>
                 </div>
                 
+                <!-- Slide 4 -->
                 <div class="carrusel-slide">
-                    <img src="images/largo.jpg" alt="analisis y Diseño de sistemas de informacion" class="carrusel-img">
+                    <img src="images/largo.jpg" alt="Automatización" class="carrusel-img">
                     <div class="carrusel-content">
-                        <h3>Análisis y Diseño de sistemas de información</h3>
+                        <h3>Automatización de Procesos</h3>
                         <p>Implementamos sistemas que reducen tareas manuales, aumentando la eficiencia y reduciendo errores en sus operaciones.</p>
                     </div>
                 </div>
                 
+                <!-- Slide 5 -->
                 <div class="carrusel-slide">
                     <img src="images/Consultoría tecnológica.jpg" alt="E-commerce" class="carrusel-img">
                     <div class="carrusel-content">
-                        <h3>Creación de bases de datos</h3>
-                        <p>Creamos tu base de datos para que mejores la eficiencia y rapidez en tu negocio.</p>
+                        <h3>Soluciones E-commerce</h3>
+                        <p>Plataformas de comercio electrónico completas que permiten expandir su negocio al mercado digital.</p>
                     </div>
                 </div>
                 
+                <!-- Slide 6 -->
                 <div class="carrusel-slide">
                     <img src="images/Diseño Web.jpg" alt="Apps móviles" class="carrusel-img">
                     <div class="carrusel-content">
-                        <h3>Rediseño de portales webs</h3>
-                        <p>Adaptamos tu portal web a los requerimientos actuales y la hacemos más estética y avanzada.</p>
+                        <h3>Aplicaciones Móviles</h3>
+                        <p>Desarrollo de aplicaciones iOS y Android que conectan su negocio con los clientes en cualquier lugar.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 7 -->
+                <div class="carrusel-slide">
+                    <img src="images/Gestion de Datos.jpg" alt="Cloud computing" class="carrusel-img">
+                    <div class="carrusel-content">
+                        <h3>Soluciones en la Nube</h3>
+                        <p>Migración, implementación y gestión de infraestructuras cloud para mayor flexibilidad y escalabilidad.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 8 -->
+                <div class="carrusel-slide">
+                    <img src="images/mision.jpg" alt="Marketing digital" class="carrusel-img">
+                    <div class="carrusel-content">
+                        <h3>Marketing Digital</h3>
+                        <p>Estrategias digitales integradas para aumentar su visibilidad y conversiones en línea.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 9 -->
+                <div class="carrusel-slide">
+                    <img src="images/valores.jpg" alt="Soporte técnico" class="carrusel-img">
+                    <div class="carrusel-content">
+                        <h3>Soporte Continuo</h3>
+                        <p>Asistencia técnica especializada y mantenimiento preventivo para garantizar el funcionamiento óptimo de sus sistemas.</p>
                     </div>
                 </div>
             </div>
@@ -497,6 +493,9 @@
             
             <div class="carrusel-indicators">
                 <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
                 <span class="indicator"></span>
                 <span class="indicator"></span>
                 <span class="indicator"></span>
@@ -517,114 +516,48 @@
     </footer>
 
     <script>
-        // Función para cambiar el idioma
-        function changeLanguage(lang) {
-            const esBtn = document.getElementById('esBtn');
-            const enBtn = document.getElementById('enBtn');
-            
-            if (lang === 'es') {
-                esBtn.classList.add('active');
-                enBtn.classList.remove('active');
-                document.documentElement.lang = 'es';
-                
-                // Cambiar contenido a español
-                document.querySelector('.hero h1').textContent = 'SOLUCIONES DIGITALES, RESULTADOS REALES';
-                document.querySelector('.hero p').textContent = 'Brindamos soluciones tecnológicas innovadoras y accesibles para pequeñas y medianas empresas';
-                document.querySelector('.button').textContent = 'Nuestros Servicios';
-                document.querySelector('.carrusel-title').textContent = 'Nuestras Soluciones Digitales';
-                
-                const titles = [
-                    'Consultoría Tecnológica',
-                    'Desarrollo Web Profesional',
-                    'Gestión de base de Datos',
-                    'Análisis y Diseño de sistemas de información',
-                    'Creación de bases de datos',
-                    'Rediseño de portales webs'
-                ];
-                
-                const texts = [
-                    'Asesoramiento experto para identificar e implementar las soluciones tecnológicas más adecuadas para optimizar los procesos de su empresa.',
-                    'Diseño y desarrollo de sitios web a medida que reflejan la identidad de su marca y mejoran su presencia digital.',
-                    'Soluciones integrales para la organización, almacenamiento y análisis de datos críticos para su negocio.',
-                    'Implementamos sistemas que reducen tareas manuales, aumentando la eficiencia y reduciendo errores en sus operaciones.',
-                    'Creamos tu base de datos para que mejores la eficiencia y rapidez en tu negocio.',
-                    'Adaptamos tu portal web a los requerimientos actuales y la hacemos más estética y avanzada.'
-                ];
-                
-                document.querySelectorAll('.carrusel-content h3').forEach((el, i) => el.textContent = titles[i]);
-                document.querySelectorAll('.carrusel-content p').forEach((el, i) => el.textContent = texts[i]);
-                
-            } else {
-                enBtn.classList.add('active');
-                esBtn.classList.remove('active');
-                document.documentElement.lang = 'en';
-                
-                // Cambiar contenido a inglés
-                document.querySelector('.hero h1').textContent = 'DIGITAL SOLUTIONS, REAL RESULTS';
-                document.querySelector('.hero p').textContent = 'We provide innovative and accessible technological solutions for small and medium businesses';
-                document.querySelector('.button').textContent = 'Our Services';
-                document.querySelector('.carrusel-title').textContent = 'Our Digital Solutions';
-                
-                const titles = [
-                    'Technology Consulting',
-                    'Professional Web Development',
-                    'Database Management',
-                    'Information Systems Analysis and Design',
-                    'Database Creation',
-                    'Website Redesign'
-                ];
-                
-                const texts = [
-                    'Expert advice to identify and implement the most suitable technological solutions to optimize your business processes.',
-                    'Custom website design and development that reflects your brand identity and enhances your digital presence.',
-                    'Comprehensive solutions for organizing, storing and analyzing critical business data.',
-                    'We implement systems that reduce manual tasks, increasing efficiency and reducing errors in your operations.',
-                    'We create your database to improve efficiency and speed in your business.',
-                    'We adapt your web portal to current requirements, making it more aesthetic and advanced.'
-                ];
-                
-                document.querySelectorAll('.carrusel-content h3').forEach((el, i) => el.textContent = titles[i]);
-                document.querySelectorAll('.carrusel-content p').forEach((el, i) => el.textContent = texts[i]);
-            }
-            
-            // Guardar preferencia de idioma
-            localStorage.setItem('preferredLanguage', lang);
+        // Menú móvil
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const toggle = document.getElementById('toggleButton');
+            menu.classList.toggle('open');
+            toggle.classList.toggle('active');
         }
 
-        // Función para el carrusel
-        function setupCarrusel() {
+        // Carrusel
+        document.addEventListener('DOMContentLoaded', function() {
             const carrusel = document.querySelector('.carrusel');
             const slides = document.querySelectorAll('.carrusel-slide');
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
             const indicators = document.querySelectorAll('.indicator');
             const progressBar = document.querySelector('.carrusel-progress');
-            
             let currentIndex = 0;
             const totalSlides = slides.length;
             let interval;
             let progressInterval;
             let isAutoPlaying = true;
-            const transitionTime = 5000; // 5 segundos
 
-            // Actualizar posición del carrusel
+            const transitionTime = 5000; // 5 segundos para cada slide
+
+            // Función para actualizar la posición del carrusel
             function updateCarrusel() {
                 carrusel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                
+
                 // Actualizar indicadores
                 indicators.forEach((indicator, index) => {
                     indicator.classList.toggle('active', index === currentIndex);
                 });
             }
 
-            // Reiniciar barra de progreso
+            // Función para reiniciar la barra de progreso
             function resetProgressBar() {
                 progressBar.style.width = '0%';
                 clearInterval(progressInterval);
                 startProgressBar();
             }
 
-            // Iniciar barra de progreso
+            // Función para animar la barra de progreso
             function startProgressBar() {
                 let width = 0;
                 const increment = 100 / (transitionTime / 50);
@@ -640,21 +573,22 @@
                 }, 50);
             }
 
-            // Ir a la siguiente diapositiva
+            // Función para ir al siguiente slide
             function goToNextSlide(fromAuto = false) {
                 currentIndex = (currentIndex + 1) % totalSlides;
                 updateCarrusel();
+
                 if (!fromAuto) resetProgressBar();
             }
 
-            // Ir a la diapositiva anterior
+            // Función para ir al slide anterior
             function goToPrevSlide() {
                 currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 updateCarrusel();
                 resetProgressBar();
             }
 
-            // Event listeners para botones
+            // Event listeners para los botones
             nextBtn.addEventListener('click', function() {
                 goToNextSlide();
                 pauseAutoPlayTemporarily();
@@ -665,7 +599,7 @@
                 pauseAutoPlayTemporarily();
             });
 
-            // Event listeners para indicadores
+            // Event listeners para los indicadores
             indicators.forEach((indicator, index) => {
                 indicator.addEventListener('click', function() {
                     currentIndex = index;
@@ -675,7 +609,7 @@
                 });
             });
 
-            // Pausar reproducción automática temporalmente
+            // Pausar el autoplay temporalmente al interactuar
             function pauseAutoPlayTemporarily() {
                 clearInterval(interval);
                 clearInterval(progressInterval);
@@ -684,10 +618,10 @@
                 setTimeout(() => {
                     startAutoPlay();
                     isAutoPlaying = true;
-                }, 10000); // Reanudar después de 10 segundos
+                }, 10000);
             }
 
-            // Iniciar reproducción automática
+            // Iniciar el autoplay
             function startAutoPlay() {
                 clearInterval(interval);
                 interval = setInterval(() => {
@@ -696,10 +630,10 @@
                 resetProgressBar();
             }
 
-            // Iniciar carrusel
+            // Iniciar el carrusel
             startAutoPlay();
 
-            // Pausar al pasar el ratón
+            // Pausar al pasar el mouse
             carrusel.addEventListener('mouseenter', () => {
                 if (isAutoPlaying) {
                     clearInterval(interval);
@@ -707,7 +641,7 @@
                 }
             });
 
-            // Reanudar al quitar el ratón
+            // Reanudar al quitar el mouse
             carrusel.addEventListener('mouseleave', () => {
                 if (isAutoPlaying) {
                     startAutoPlay();
@@ -734,7 +668,7 @@
                 }
             }, { passive: true });
 
-            // Manejar gesto de deslizar
+            // Manejar el gesto de deslizar
             function handleSwipe() {
                 const threshold = 50;
                 if (touchEndX < touchStartX - threshold) {
@@ -743,33 +677,6 @@
                     goToPrevSlide();
                 }
             }
-        }
-
-        // Función para el menú móvil
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const toggle = document.getElementById('toggleButton');
-            menu.classList.toggle('open');
-            toggle.classList.toggle('active');
-        }
-
-        // Inicializar cuando el DOM esté cargado
-        document.addEventListener('DOMContentLoaded', function() {
-            // Cargar idioma preferido
-            const preferredLanguage = localStorage.getItem('preferredLanguage') || 'es';
-            changeLanguage(preferredLanguage);
-            
-            // Configurar carrusel
-            setupCarrusel();
-            
-          
-            document.getElementById('esBtn').addEventListener('click', function() {
-                changeLanguage('es');
-            });
-
-            document.getElementById('enBtn').addEventListener('click', function() {
-                changeLanguage('en');
-            });
         });
     </script>
 </body>
